@@ -2,7 +2,7 @@
 
 ### Made by: Evan James G. Paciencia | 2ECE-C
 
-This repository contains Programming Assignment 4 for the course Advanced Computer Programming** of S.Y. 2026-2027. This assignment covers **Data Wrangling and Data Visualization using Pandas and Matplotlib.
+This repository contains Programming Assignment 4 for the course Advanced Computer Programming of S.Y. 2026-2027. This assignment covers Data Wrangling and Data Visualization using Pandas and Matplotlib.
 
 ---
 
