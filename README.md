@@ -168,6 +168,3 @@ Last edited: 9/10/2026
 Changes: 9/10/2026
 
 * Added `board2.xlsx`
-
-```
-```
