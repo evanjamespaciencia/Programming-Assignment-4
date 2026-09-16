@@ -137,5 +137,5 @@ print("Averaging By Hometown, Luzon has the highest average of scores,\n with Mi
 Created: 9/17/2026
 Last edited: 9/17/2026
 Changes: 9/17/2026
-
-* Added `board2.xlsx`
+Added `board2.xlsx`
+Added `Paciencia_PA4`
