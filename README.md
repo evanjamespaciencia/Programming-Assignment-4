@@ -30,20 +30,10 @@ Both filtering conditions must be applied to the source dataset before selecting
 
 ### Final Code:
 ```
-import pandas as pd
-import matplotlib.pyplot as plt
-
-VisCom = pd.read_excel('board2.xlsx')
-
-VisComm = VisCom.loc[
-    (VisCom['Hometown'] == 'Visayas') &
-    (VisCom['Track'] == 'Communication'),
-    ['Name', 'Gender', 'Math', 'Electronics', 'Average']
-]
-
-VisComm
-
+VisComm=df.loc[(df['Hometown']=='Visayas') &
+            (df['Track']=='Communication'),['Name','Gender','Math','Electronics','Average']]
 print("Number of rows:", VisComm.shape[0])
+VisComm
 ```
 
 ---
@@ -69,15 +59,9 @@ After displaying `VisFemale`, display only the rows whose **Average is at least 
 ### Final Code:
 
 ```
-VisFemale = VisCom.loc[
-    (VisCom['Hometown'] == 'Visayas') &
-    (VisCom['Gender'] == 'Female'),
-    ['Name', 'Track', 'GEAS', 'Electronics', 'Average']
-]
-
+VisFemale=df.loc[(df['Hometown']=='Visayas') &
+            (df['Gender']=='Female') & (df['Average']>60),['Name','Track','Math','Electronics','Average']]
 VisFemale
-
-VisFemale.loc[VisFemale['Average'] >= 60]
 ```
 
 ### How the code works:
@@ -122,41 +106,28 @@ For each feature, calculate the mean of `Average` for every category using Panda
 
 ### Final Code:
 ```
-AvgHometown = VisCom.groupby('Hometown')['Average'].mean()
-AvgGender = VisCom.groupby('Gender')['Average'].mean()
-AvgTrack = VisCom.groupby('Track')['Average'].mean()
-
-print("Average by Hometown:")
-print(AvgHometown)
-
-print("\nAverage by Gender:")
-print(AvgGender)
-
-print("\nAverage by Track:")
-print(AvgTrack)
-
-fig = plt.figure(figsize=(28, 6))
-
+AvgHometown = df.groupby('Hometown')['Average'].mean()
+AvgGender = df.groupby('Gender')['Average'].mean()
+AvgTrack = df.groupby('Track')['Average'].mean()
+fig = plt.figure(figsize=(20, 6)) 
 ax1 = fig.add_subplot(1, 3, 1)
-ax1.bar(AvgHometown.index, AvgHometown.values)
-ax1.set_title("Average by Hometown")
-ax1.set_xlabel("Hometown")
-ax1.set_ylabel("Average Score")
-
+ax1.bar(AvgHometown.index, AvgHometown.values, color='Red')
+ax1.set_title('Average by Hometown')
+ax1.set_xlabel('Hometown')
+ax1.set_ylabel('Average Score')
 ax2 = fig.add_subplot(1, 3, 2)
-ax2.bar(AvgGender.index, AvgGender.values)
-ax2.set_title("Average by Gender")
-ax2.set_xlabel("Gender")
-ax2.set_ylabel("Average Score")
-
+ax2.bar(AvgGender.index, AvgGender.values, color='Green')
+ax2.set_title('Average by Gender')
+ax2.set_xlabel('Gender')
+ax2.set_ylabel('Average Score')
 ax3 = fig.add_subplot(1, 3, 3)
-ax3.bar(AvgTrack.index, AvgTrack.values)
-ax3.set_title("Average by Track")
-ax3.set_xlabel("Track")
-ax3.set_ylabel("Average Score")
-
+ax3.bar(AvgTrack.index, AvgTrack.values, color='Blue')
+ax3.set_title('Average by Track')
+ax3.set_xlabel('Track')
+ax3.set_ylabel('Average Score')
 plt.tight_layout()
 plt.show()
+print("Averaging By Hometown, Luzon has the highest average of scores,\n with Mindanao being in the middle, and Visayas at Last.\n And averaging by gender, Male students has higher average \ncompared to female students.\n And lastly, averaging by Track shows that \nCommuncation Track students has the highest average, \n with microelectronic track students being 2nd, and intrumentation being last")
 ```
 
 ---
