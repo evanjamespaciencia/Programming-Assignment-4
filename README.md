@@ -1,5 +1,3 @@
-Sure. Here is the **GitHub README with the colors removed**—no colored text, badges, or other styling beyond normal Markdown headings and code blocks. The content remains based on the Experiment 4 PDF. 
-
 # ECE-2112-PA-4
 
 ### Made by: Evan James G. Paciencia | 2ECE-C
