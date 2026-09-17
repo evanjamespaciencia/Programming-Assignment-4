@@ -109,7 +109,7 @@ For each feature, calculate the mean of `Average` for every category using Panda
 AvgHometown = df.groupby('Hometown')['Average'].mean()
 AvgGender = df.groupby('Gender')['Average'].mean()
 AvgTrack = df.groupby('Track')['Average'].mean()
-fig = plt.figure(figsize=(20, 6)) 
+fig = plt.figure(figsize=(20, 6))
 ax1 = fig.add_subplot(1, 3, 1)
 ax1.bar(AvgHometown.index, AvgHometown.values, color='Red')
 ax1.set_title('Average by Hometown')
@@ -126,8 +126,10 @@ ax3.set_title('Average by Track')
 ax3.set_xlabel('Track')
 ax3.set_ylabel('Average Score')
 plt.tight_layout()
+fig.text(0, -0.1, 
+         'Averaging By Hometown, Luzon has the highest average of scores, with Mindanao being in the middle, and Visayas at Last.\nAnd averaging by gender, Male students has higher average compared to female students.\nAnd lastly, averaging by Track shows that Communcation Track students has the highest average, with microelectronic track students being 2nd, and intrumentation being last', 
+         style='italic')
 plt.show()
-print("Averaging By Hometown, Luzon has the highest average of scores,\n with Mindanao being in the middle, and Visayas at Last.\n And averaging by gender, Male students has higher average \ncompared to female students.\n And lastly, averaging by Track shows that \nCommuncation Track students has the highest average, \n with microelectronic track students being 2nd, and intrumentation being last")
 ```
 
 ---
@@ -139,3 +141,5 @@ Last edited: 9/17/2026
 Changes: 9/17/2026
 Added `board2.xlsx`
 Added `2ECECPaciencia_PA4`
+Removed conclusion print from solution code C
+Added conclusion text in final figure for solution code C
