@@ -137,9 +137,15 @@ plt.show()
 # Edit/History Log
 
 Created: 9/17/2026
+
 Last edited: 9/17/2026
+
 Changes: 9/17/2026
+
 Added `board2.xlsx`
+
 Added `2ECECPaciencia_PA4`
-Removed conclusion print from solution code C
-Added conclusion text in final figure for solution code C
+
+Removed conclusion print from solution code C  
+
+Added conclusion text in final figure for solution code C  
